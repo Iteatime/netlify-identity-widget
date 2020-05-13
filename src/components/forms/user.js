@@ -18,7 +18,7 @@ export default class UserForm extends Component {
   };
 
   render() {
-    const { page, message, saving, namePlaceholder } = this.props;
+    const { page, message, saving, namePlaceholder, t } = this.props;
     const { name, email, password } = this.state;
 
     return (
@@ -30,13 +30,17 @@ export default class UserForm extends Component {
         {page.name && (
           <div className="formGroup">
             <label>
-              <span className="visuallyHidden">Enter your name</span>
+              <span className="visuallyHidden">
+                {t("form_name_placeholder")}
+              </span>
               <input
                 className="formControl"
                 type="name"
                 name="name"
                 value={name}
-                placeholder={namePlaceholder ? namePlaceholder : "Name"}
+                placeholder={
+                  namePlaceholder ? namePlaceholder : t("form_email_label")
+                }
                 autocapitalize="off"
                 required
                 oninput={this.handleInput}
@@ -48,13 +52,13 @@ export default class UserForm extends Component {
         {page.email && (
           <div className="formGroup">
             <label>
-              <span className="visuallyHidden">Enter your email</span>
+              <span className="visuallyHidden">{t("form_name_label")}</span>
               <input
                 className="formControl"
                 type="email"
                 name="email"
                 value={email}
-                placeholder="Email"
+                placeholder={t("form_email_placeholder")}
                 autocapitalize="off"
                 required
                 oninput={this.handleInput}
@@ -66,13 +70,13 @@ export default class UserForm extends Component {
         {page.password && (
           <div className="formGroup">
             <label>
-              <span className="visuallyHidden">Enter your password</span>
+              <span className="visuallyHidden">{t("form_password_label")}</span>
               <input
                 className="formControl"
                 type="password"
                 name="password"
                 value={password}
-                placeholder="Password"
+                placeholder={t("form_password_placeholder")}
                 required
                 oninput={this.handleInput}
               />
@@ -82,8 +86,8 @@ export default class UserForm extends Component {
         )}
         <Button
           saving={saving}
-          text={page.button}
-          saving_text={page.button_saving}
+          text={t(page.button)}
+          saving_text={t(page.button_saving)}
         />
       </form>
     );

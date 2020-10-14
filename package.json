@@ -1,7 +1,7 @@
 {
   "name": "netlify-identity-widget",
   "description": "Netlify Identity widget for easy integration",
-  "version": "1.9.1",
+  "version": "1.9.1-beta",
   "author": "Matt Biilmann <matt@netlify.com>",
   "bugs": {
     "url": "https://github.com/netlify/netlify-identity-widget/issues"
@@ -60,8 +60,8 @@
     "netlify"
   ],
   "license": "MIT",
-  "main": "./build/netlify-identity",
-  "releaseVersion": "v1",
+  "main": "./releases/v1-beta/netlify-identity",
+  "releaseVersion": "v1-beta",
   "repository": "netlify/netlify-identity-widget",
   "scripts": {
     "build": "run-p build:*",
